@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>
+            The AI Job <span class="brand">Operating System</span>
+        </h1>
+
+        <p class="subtitle">
+            Track applications. Discover live jobs. Match skills.
+            Automate your career.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('register') }}" class="glow-btn">
+                Get Started Free 🚀
+            </a>
+            <a href="#features" class="secondary-btn">
+                See Features
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section id="features" class="features">
+
+    <h2>Everything You Need</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>🎯 Smart Job Matching</h3>
+            <p>AI-powered resume matching to find perfect opportunities.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📡 Live Job Feed</h3>
+            <p>Real-time jobs from global APIs updated automatically.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📊 Application Tracker</h3>
+            <p>Track interviews, offers, and rejections in one dashboard.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔖 Bookmark System</h3>
+            <p>Save jobs and apply later with one click.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📄 Resume Analyzer</h3>
+            <p>Improve your ATS score and optimize keywords instantly.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⚡ Career Automation</h3>
+            <p>Turn your job hunt into a structured workflow system.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing">
+
+    <h2>Simple Pricing</h2>
+
+    <div class="pricing-grid">
+
+        <div class="price-card">
+            <h3>Free</h3>
+            <p class="price">₹0</p>
+            <ul>
+                <li>Live Job Search</li>
+                <li>Application Tracking</li>
+                <li>Resume Upload</li>
+            </ul>
+            <a href="{{ url_for('register') }}" class="secondary-btn">
+                Start Free
+            </a>
+        </div>
+
+        <div class="price-card premium">
+            <h3>Pro</h3>
+            <p class="price">₹499 / month</p>
+            <ul>
+                <li>AI Resume Matching</li>
+                <li>Priority Job Alerts</li>
+                <li>Advanced Analytics</li>
+            </ul>
+            <a href="{{ url_for('register') }}" class="glow-btn">
+                Upgrade Now
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

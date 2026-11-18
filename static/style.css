@@ -1,0 +1,208 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Logout always right */
+.logout-btn {
+    margin-left: 30px;
+    padding: 8px 18px;
+    background: #ef4444;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
+
+/* =========================
+   CENTER CONTAINER
+========================= */
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.form-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    backdrop-filter: blur(15px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 25px;
+    background: #38bdf8;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.07);
+}
+
+/* Apply Button Special Animation */
+.apply-btn {
+    background: linear-gradient(45deg, #22c55e, #16a34a);
+    transition: 0.4s;
+}
+
+.apply-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #22c55e;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.main-container {
+    padding: 40px 60px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 250px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: #6366f1;
+    color: white;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background: #4f46e5;
+    transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    }
+
+    .form-card {
+        width: 90%;
+    }
+}

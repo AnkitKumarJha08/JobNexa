@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobnexa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-section">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="nav-logo">
+        <span class="brand">Jobnexa</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('applications') }}">Applications</a>
+        <a href="{{ url_for('bookmarks') }}">Bookmarks</a>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</nav>
+
+<div class="main-container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

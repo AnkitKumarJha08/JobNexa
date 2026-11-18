@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Application Tracker</h2>
+
+{% for app in apps %}
+<div class="card">
+    <p><strong>Status:</strong> {{ app.status }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

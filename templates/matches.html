@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Job Matches</h2>
+
+{% for match in matches %}
+<div class="card">
+    <h3>{{ match.job.title }} - {{ match.job.company }}</h3>
+    <p><strong>Match Score:</strong> {{ match.score }}%</p>
+
+    <br>
+
+    <a href="{{ url_for('generate_cover_letter',
+            resume_id=resume_id,
+            job_id=match.job.id) }}"
+       class="btn">
+        Generate Cover Letter
+    </a>
+
+    <a href="{{ url_for('apply_job',
+            job_id=match.job.id) }}"
+       class="btn">
+        Track Application
+    </a>
+
+    <a href="{{ url_for('followup_email',
+            job_id=match.job.id) }}"
+       class="btn">
+        Generate Follow-Up
+    </a>
+
+</div>
+{% endfor %}
+
+{% endblock %}

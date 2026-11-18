@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Welcome, {{ name }} 🚀</h2>
+
+<!-- ================= Resume Upload ================= -->
+<div class="card">
+    <h3>Upload Resume</h3>
+    <form action="{{ url_for('upload_resume') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <button type="submit">Upload</button>
+    </form>
+</div>
+
+
+<!-- ================= Resume Preview ================= -->
+<div class="card">
+    <h3>Resume Preview</h3>
+
+    {% if resumes %}
+        <pre style="white-space: pre-wrap;">
+{{ resumes[0].extracted_text[:800] }}
+        </pre>
+
+    {% else %}
+        <p>No resume uploaded yet.</p>
+    {% endif %}
+</div>
+
+
+<!-- ================= Search Form ================= -->
+<h2>🔥 Live Jobs</h2>
+
+<form method="GET" action="{{ url_for('dashboard') }}" style="margin-bottom:20px;">
+    <input type="text"
+           name="keyword"
+           placeholder="Search jobs..."
+           value="{{ request.args.get('keyword', '') }}"
+           style="padding:8px; width:250px;">
+
+    <button type="submit">Search</button>
+</form>
+
+
+<!-- ================= Live Job Results ================= -->
+
+{% if jobs %}
+
+    {% for job in jobs %}
+    <div class="card">
+
+        <h3>{{ job.title }}</h3>
+
+        <p><strong>Company:</strong>
+            {{ job.company.display_name if job.company }}
+        </p>
+
+        <p><strong>Location:</strong>
+            {{ job.location.display_name if job.location }}
+        </p>
+
+        <p><strong>Posted:</strong>
+            {{ job.created[:10] if job.created }}
+        </p>
+
+        <br>
+
+        <!-- Apply on company website -->
+        <a href="{{ job.redirect_url }}"
+           target="_blank"
+           class="btn">
+            Apply on Company Website
+        </a>
+
+    </div>
+    {% endfor %}
+
+{% else %}
+    <p>No jobs found.</p>
+{% endif %}
+
+
+<br><br>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}
